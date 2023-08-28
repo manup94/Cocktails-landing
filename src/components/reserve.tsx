@@ -4,18 +4,24 @@ import { useState } from "react"
 export default function Reserve() {
 
     const [init, setInit] = useState(false)
+    const [email, setEmail] = useState(false)
     const [date, setDate] = useState(false)
     const [confirm, setConfirm] = useState(false)
     const [text, setText] = useState('Reserva tu experiencia')
 
     const handlerInit = () => {
-        setText('Selecciona tu fecha')
+        setText('Dinos tu correo electronico')
         setInit(true)
     }
+    const handlerEmail = () => {
+        setText('Selecciona una fecha')
+        setEmail(true)
+    }
     const handlerDate = () => {
-        setText('¿Cuantas personas?')
+        setText('¿Para cuantas personas?')
         setDate(true)
     }
+
     const handlerConfirm = () => {
         setConfirm(true)
     }
@@ -32,14 +38,30 @@ export default function Reserve() {
                     {init && (
                         <div className="mt-3 md:w1/3">
                             <form className="  ">
-                                <input className="rounded mr-3 w-40" type="date" />
-                                {!date ? (
+                                <input className="rounded mr-3 w-40" type="email" />
+                                {!email ? (
                                     <button
                                         type="button"
-                                        onClick={() => handlerDate()}
+                                        onClick={() => handlerEmail()}
                                         className='mt-4 p-2 font-semibold bg-[#ee4a69] hover:bg-[#bc3c54] py-2 px-4 rounded shadow-md'>
                                         Siguiente
                                     </button>
+                                ) : null}
+
+                                {email ? (
+                                    <div>
+
+                                        <input className="rounded mr-3 mt-3 w-40 text-center" type="date" />
+                                        {!date ? (
+                                            <button
+                                                type="button"
+                                                onClick={() => handlerDate()}
+                                                className='mt-4 p-2 font-semibold bg-[#ee4a69] hover:bg-[#bc3c54] py-2 px-4 rounded shadow-md'>
+                                                Siguiente
+                                            </button>
+                                        ) : null}
+                                    </div>
+
                                 ) : null}
                                 {date ? (
                                     <div>
