@@ -3,7 +3,7 @@ export default function NewsLetter() {
     return (
         <div className="bg-[url('/images/form-bg.jpg')] bg-cover text-white text-center p-5">
             <h3 className="font-bold">Subscribete para las novedades y obtener ofertas unicas</h3>
-            <form className="flex  m-5  flex-col items-center text-center" action="">
+            <form className="flex  m-5 text-black  flex-col items-center text-center" action="">
 
                 <label className="font-semibold" htmlFor="name">Nombre</label>
                 <input className="rounded m-3 border-none text-center md:w-1/2" type="text" />
