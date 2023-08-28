@@ -11,9 +11,9 @@ export function Navbar() {
 
 
     return (
-        <div className="bg-[#5e323a] p-3 flex flex-col md:flex-row items-center">
+        <div className="bg-[#5e323a]   p-3 flex flex-col md:flex-row items-center">
             <div className="flex items-center ">
-                <img src="/images/logo.png" className="w-1/4" alt="origin-logo" />
+                <img src="/images/logo.png" className="w-1/5" alt="origin-logo" />
                 <button
                     className="md:hidden ml-auto"
                     onClick={toggleMenu}

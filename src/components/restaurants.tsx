@@ -1,6 +1,6 @@
 
-
 export default function Restaurants() {
+
 
     const restaurants = [
         {
@@ -22,25 +22,22 @@ export default function Restaurants() {
     ]
 
     return (
-        <div className="bg-[#5e323a] p-3 md:flex md:flex-col   ">
+        <div className="bg-black p-3 md:flex md:flex-col   ">
             <h2 className="text-[#f9a394]">Nuestros locales</h2>
             <hr />
-            <div className="bg-[#5e323a] p-3 md:flex    ">
-                {
-                    restaurants.map(restaurant => {
-                        return (
-                            <div className="bg-white md:w-1/4  mx-auto rounded-lg shadow-md p-4 m-3">
-                                <img src={restaurant.img} alt={`Imagen de ${restaurant.title}`} className="w-full h-48 object-cover rounded-md mb-4" />
-                                <h3 className="text-xl font-semibold mb-2">{restaurant.title}</h3>
-                                <p className="text-gray-600 mb-2">{restaurant.description}</p>
-                                <div className="flex items-center justify-between">
-                                    <p className="text-lg font-bold">{restaurant.number}</p>
-                                </div>
+            <div className=" p-3 md:flex">
+                {restaurants?.map(restaurant => {
+                    return (
+                        <div className="bg-[#f7928c] shadow-white md:w-1/4 mx-auto rounded-2xl shadow-2xl p-4 m-3">
+                            <img src={restaurant.img} alt={`Imagen de ${restaurant.title}`} className="w-full h-48 object-cover rounded-md mb-4" />
+                            <h3 className="text-xl font-semibold mb-2">{restaurant.title}</h3>
+                            <p className="text-gray-600 mb-2">{restaurant.description}</p>
+                            <div className="flex items-center justify-between">
+                                <p className="text-lg font-bold">{restaurant.number}</p>
                             </div>
-                        )
-                    })
-                }
-
+                        </div>
+                    );
+                })}
             </div>
         </div>
     )
