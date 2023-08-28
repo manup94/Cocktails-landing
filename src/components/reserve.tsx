@@ -42,7 +42,8 @@ export default function Reserve() {
                                     </button>
                                 ) : null}
                                 {date ? (
-                                    <form>
+                                    <div>
+
                                         <input className="rounded mr-3 mt-3 w-40 text-center" type="number" />
                                         <button
                                             type="button"
@@ -50,7 +51,8 @@ export default function Reserve() {
                                             className='mt-4 p-2 font-semibold bg-[#ee4a69] hover:bg-[#bc3c54] py-2 px-4 rounded shadow-md'>
                                             Confirmar
                                         </button>
-                                    </form>
+                                    </div>
+
                                 ) : null}
                             </form>
                         </div>

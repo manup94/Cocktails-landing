@@ -6,6 +6,7 @@ import Slogan from "@/components/slogan";
 import NewsLetter from "@/components/newsLetter";
 import Footer from "@/components/footer";
 
+console.log('Desarrollado a modo demostración para Welkhomeclub por Manuel Pérez Prado<');
 
 export default function HomePage() {
   return (

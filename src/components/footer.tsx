@@ -26,6 +26,7 @@ export default function Footer() {
             </div>
             <hr className="my-6 border-[#f7928c]" />
             <p className="text-center">© 2023 Origin Cocktails. Todos los derechos reservados.</p>
+            <p className="text-center">Desarrollado a modo demostración para Welkhomeclub por Manuel Pérez Prado</p>
         </div>
 
     )
