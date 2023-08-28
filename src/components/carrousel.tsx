@@ -1,22 +1,47 @@
+'use client'
+import { useState, useEffect } from 'react';
+
+const images = [
+    '/images/carrousel-1.jpg',
+    '/images/carrousel-2.jpg',
+    '/images/carrousel-3.jpg'
+];
+
+console.log('Desarrollado a modo demostración para Welkhomeclub por Manuel Pérez Prado');
 
 
-export default function CustomCarousel() {
+function Carousel() {
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+        }, 8000)
+
+        return () => clearInterval(interval);
+    }, []);
 
     return (
-
-        <div id="carouselExampleFade" className="carousel-fade pointer-event flex justify-center" data-bs-ride="carousel">
-            <div className="carousel-inner  bg-black">
-                <div className="carousel-item active  flex justify-center items-center">
-                    <img src="/images/carrousel-1.jpg" className="w-full md:max-w-md mx-auto" alt="img-1" />
-                </div>
-                <div className="carousel-item flex  justify-center items-center">
-                    <img src="/images/carrousel-2.jpg" className="w-full md:max-w-md mx-auto" alt="img-2" />
-                </div>
-                <div className="carousel-item flex  justify-center items-center">
-                    <img src="/images/carrousel-3.jpg" className="w-full md:max-w-md mx-auto" alt="img-3" />
+        <div className="flex bg-black items-center justify-center">
+            <div className="relative w-full max-w-md">
+                <div className="overflow-hidden">
+                    <div
+                        className="flex transition-transform duration-300 ease-in-out"
+                        style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+                    >
+                        {images.map((image, index) => (
+                            <img
+                                key={index}
+                                className="w-full h-auto"
+                                src={image}
+                                alt={`img ${index + 1}`}
+                            />
+                        ))}
+                    </div>
                 </div>
             </div>
         </div>
-
     );
 }
+
+export default Carousel;
