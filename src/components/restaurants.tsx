@@ -28,7 +28,7 @@ export default function Restaurants() {
             <div className=" p-3 md:flex">
                 {restaurants?.map(restaurant => {
                     return (
-                        <div className="bg-[#f7928c] shadow-white md:w-1/4 mx-auto rounded-2xl shadow-2xl p-4 m-3">
+                        <div key={restaurant.title} className="bg-[#f7928c] shadow-white md:w-1/4 mx-auto rounded-2xl shadow-2xl p-4 m-3">
                             <img src={restaurant.img} alt={`Imagen de ${restaurant.title}`} className="w-full h-48 object-cover rounded-md mb-4" />
                             <h3 className="text-xl font-semibold mb-2">{restaurant.title}</h3>
                             <p className="text-gray-600 mb-2">{restaurant.description}</p>
